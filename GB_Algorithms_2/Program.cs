@@ -32,6 +32,11 @@ namespace GB_Algorithms_2
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Метод перевода чисел из десятичной системы в двоичную.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="res"></param>
         static void BinaryTranslation(uint x, ref string res)
         {
             if (x == 0)
