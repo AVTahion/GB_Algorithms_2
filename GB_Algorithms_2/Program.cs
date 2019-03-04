@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 
 namespace GB_Algorithms_2
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -37,7 +37,7 @@ namespace GB_Algorithms_2
         /// </summary>
         /// <param name="x"></param>
         /// <param name="res"></param>
-        static void BinaryTranslation(uint x, ref string res)
+        public static void BinaryTranslation(uint x, ref string res)
         {
             if (x == 0)
             {
