@@ -33,7 +33,7 @@ namespace Task_4
 
         /// <summary>
         /// Метод проверяет все возможные комбинации двух действий +1 и *2 приводящие 3 к 20,
-        /// TODO проверку уникальности последовательности (считает и повторяющиеся)
+        /// Находит не все последовательности т.к. не генерирует последовательности с ведущими нулями
         /// </summary>
         /// <returns></returns>
         static int NumberOfSolutions()
@@ -42,7 +42,8 @@ namespace Task_4
             int res;
             string comSequenceBin;
             char[] cSBArray;
-            for (int i = 0; i < 131071; i++)
+
+            for (int i = 0; i < 131072; i++)
             {
                 comSequenceBin = String.Empty;
                 res = 3;
@@ -52,12 +53,12 @@ namespace Task_4
                 {
                     int test = (int)Char.GetNumericValue(cSBArray[k]);
                     res = test == 0 ? MultiplyTwo(res) : AddOne(res);
-                    if (res == 20)
-                    {
-                        NOS++;
-                        Console.WriteLine(i);
-                    }
                     if (res > 20) break;
+                }
+                if (res == 20)
+                {
+                    Console.WriteLine(i);
+                    NOS++;
                 }
 
             }
@@ -68,6 +69,7 @@ namespace Task_4
         {
             Console.WriteLine();
             int num = NumberOfSolutions();
+            Console.WriteLine("done");
             Console.WriteLine(num);
             Console.ReadKey();
         }
